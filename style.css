@@ -1,0 +1,649 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #1a2980, #26d0ce);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 30px;
+    max-width: 800px;
+    width: 100%;
+    margin: auto;
+}
+
+/* Quiz Styles */
+.welcome-screen, .quiz-container {
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    color: #1a2980;
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+input[type="text"] {
+    width: 100%;
+    max-width: 300px;
+    padding: 12px;
+    margin: 10px auto;
+    border: 2px solid #1a2980;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.question {
+    margin: 20px 0;
+    text-align: left;
+    font-size: 1.2em;
+}
+
+.options {
+    display: grid;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.option {
+    padding: 12px;
+    border: 2px solid #1a2980;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+    background: white;
+}
+
+.option:hover {
+    background: linear-gradient(45deg, #1a2980, #26d0ce);
+    color: white;
+    transform: translateY(-2px);
+}
+
+.selected {
+    background: linear-gradient(45deg, #1a2980, #26d0ce);
+    color: white;
+}
+
+/* Certificate Styles */
+.certificate {
+    background: #fff;
+    width: 1000px !important;
+    height: 700px !important;
+    position: relative;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Updated Content Wrapper */
+.certificate-content {
+    position: relative;
+    z-index: 2;
+    width: 900px; /* Slightly smaller than container for margins */
+    height: 600px;
+    margin: auto !important;
+    padding: 40px !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+/* Ensure all content is centered */
+.certificate-header,
+.certificate-body,
+.certificate-footer {
+    width: 100%;
+    text-align: center;
+}
+
+/* Header Section */
+.certificate-header {
+    text-align: center;
+    padding-top: 20px;
+}
+
+.certificate h2 {
+    font-size: 48px;
+    color: #d31b4c;
+    margin: 0 0 20px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-weight: 800;
+    background: linear-gradient(45deg, #1a2980, #44df8f);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Body Section */
+.certificate-body {
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.certificate-name {
+    font-size: 60px;
+    margin: 20px 0;
+    font-family: 'Pinyon Script', cursive;
+    color: #26d0ce;
+    line-height: 1.2;
+}
+
+.certificate-course {
+    font-size: 32px;
+    color: #1a2980;
+    font-weight: bold;
+    margin: 15px 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.certificate-text {
+    font-size: 20px;
+    color: #555;
+    margin: 10px 0;
+}
+
+/* Footer Section */
+.certificate-footer {
+    margin-top: auto;
+    padding-bottom: 20px;
+}
+
+.signature-section {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 100px;
+    margin-top: 40px;
+}
+
+.signature {
+    text-align: center;
+    min-width: 200px;
+}
+
+.signature-line {
+    width: 100%;
+    height: 1px;
+    background: #1a2980;
+    margin: 10px 0;
+}
+
+.signature-title {
+    font-size: 16px;
+    color: #555;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Seal Position */
+.seal {
+    position: absolute;
+    bottom: 60px;
+    right: 60px;
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(45deg, #1a2980, #26d0ce);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(-15deg);
+    z-index: 3;
+}
+
+/* Print/PDF Optimization */
+@media print {
+    @page {
+        size: 1000px 700px;
+        margin: 0;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    .certificate {
+        margin: 0;
+        box-shadow: none;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+}
+
+/* Signature Section */
+.signature-section {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 100px;
+    margin-top: 40px;
+}
+
+.signature {
+    text-align: center;
+    min-width: 200px;
+}
+
+.signature-line {
+    width: 100%;
+    height: 1px;
+    background: #1a2980;
+    margin: 10px 0;
+}
+
+.signature-title {
+    font-size: 14px;
+    color: #555;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Download Button */
+.download-btn {
+    background: linear-gradient(45deg, #1a2980, #26d0ce);
+    color: white;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 30px;
+    display: inline-block;
+}
+
+.download-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(26, 41, 128, 0.2);
+}
+
+/* Seal remains unchanged */
+.seal {
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(45deg, #1a2980, #26d0ce);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(-15deg);
+}
+
+.seal-content {
+    text-align: center;
+    color: white;
+}
+
+.seal-certified {
+    font-size: 16px;
+    font-weight: bold;
+    color: #FFD700;
+}
+
+.seal-javascript {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.seal-developer {
+    font-size: 14px;
+    color: #4CAF50;
+}
+
+/* Button Styles */
+button {
+    background: linear-gradient(45deg, #1a2980, #26d0ce);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 10px;
+    transition: all 0.3s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.download-btn {
+    background: #4CAF50;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+/* Navigation Buttons */
+.navigation-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.navigation-buttons button {
+    background: linear-gradient(45deg, #1a2980, #26d0ce);
+    color: white;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 120px;
+}
+
+.navigation-buttons button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(26, 41, 128, 0.2);
+}
+
+.navigation-buttons button:disabled {
+    background: #cccccc;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    .certificate {
+        padding: 20px;
+    }
+
+    h1, .certificate h2 {
+        font-size: 1.8em;
+    }
+
+    .certificate-name {
+        font-size: 1.5em;
+    }
+
+    .seal {
+        width: 100px;
+        height: 100px;
+        bottom: 20px;
+        right: 20px;
+    }
+
+    .seal-certified {
+        font-size: 14px;
+    }
+
+    .seal-javascript, .seal-developer {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+
+    h1, .certificate h2 {
+        font-size: 1.5em;
+    }
+
+    .certificate {
+        padding: 15px;
+    }
+
+    .seal {
+        width: 80px;
+        height: 80px;
+        bottom: 15px;
+        right: 15px;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+}
+
+.instructor-signature {
+    font-family: 'Pacifico', 'Brush Script MT', cursive;
+    font-size: 24px;
+    color: #1a2980;
+    margin-bottom: 5px;
+}
+
+/* Responsive Certificate Styles */
+@media screen and (max-width: 1024px) {
+    .certificate {
+        width: 100% !important;
+        height: auto !important;
+        min-height: 500px;
+        padding: 20px !important;
+        transform: scale(0.9);
+    }
+
+    .certificate-content {
+        width: 100%;
+        height: auto;
+        padding: 30px !important;
+    }
+
+    .certificate h2 {
+        font-size: 36px;
+        letter-spacing: 4px;
+    }
+
+    .certificate-name {
+        font-size: 48px;
+        margin: 20px 0;
+    }
+
+    .certificate-course {
+        font-size: 24px;
+        margin: 10px 0;
+    }
+
+    .certificate-text {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .certificate {
+        transform: scale(0.8);
+    }
+
+    .certificate h2 {
+        font-size: 32px;
+        letter-spacing: 3px;
+    }
+
+    .certificate-name {
+        font-size: 42px;
+    }
+
+    .signature-section {
+        padding: 0 50px;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .corner-decoration {
+        width: 60px;
+        height: 60px;
+    }
+
+    .seal {
+        width: 100px;
+        height: 100px;
+        bottom: 40px;
+        right: 40px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .certificate {
+        transform: scale(0.7);
+    }
+
+    .certificate h2 {
+        font-size: 28px;
+        letter-spacing: 2px;
+    }
+
+    .certificate-name {
+        font-size: 36px;
+    }
+
+    .certificate-course {
+        font-size: 20px;
+    }
+
+    .certificate-text {
+        font-size: 16px;
+    }
+
+    .signature-section {
+        padding: 0 20px;
+    }
+
+    .instructor-signature {
+        font-size: 24px;
+    }
+
+    .seal {
+        width: 80px;
+        height: 80px;
+        bottom: 30px;
+        right: 30px;
+    }
+}
+
+/* Print Media Query for PDF Download */
+@media print {
+    .certificate {
+        width: 1000px !important;
+        height: 700px !important;
+        transform: none !important;
+        padding: 0 !important;
+    }
+
+    .certificate-content {
+        width: 900px;
+        height: 600px;
+        padding: 50px !important;
+    }
+
+    /* Reset all responsive styles for PDF */
+    .certificate h2,
+    .certificate-name,
+    .certificate-course,
+    .certificate-text,
+    .signature-section,
+    .seal {
+        transform: none !important;
+        font-size: initial !important;
+        width: initial !important;
+        height: initial !important;
+        padding: initial !important;
+    }
+}
+
+/* Container Responsiveness */
+.container {
+    padding: 15px;
+    margin: 10px;
+    width: calc(100% - 20px);
+    max-width: 1000px;
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        padding: 10px;
+        margin: 5px;
+    }
+
+    .welcome-screen, 
+    .quiz-container {
+        padding: 15px;
+    }
+
+    input[type="text"] {
+        max-width: 100%;
+    }
+
+    .download-btn {
+        padding: 12px 30px;
+        font-size: 16px;
+    }
+}
+
+/* Updated Signature Styles */
+.signature {
+    text-align: center;
+    min-width: 200px;
+}
+
+.instructor-signature {
+    font-family: 'Pacifico', 'Brush Script MT', cursive;
+    font-size: 24px;
+    color: #1a2980;
+    margin-bottom: 5px;
+}
+
+.date-signature {
+    font-family: 'Arial', sans-serif;
+    font-size: 20px;
+    color: #1a2980;
+    margin-bottom: 5px;
+}
+
+.signature-line {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #1a2980, transparent);
+    margin: 10px 0;
+}
+
+.signature-title {
+    font-size: 14px;
+    color: #555;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 5px;
+}

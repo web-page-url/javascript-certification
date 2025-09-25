@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Character Set and Viewport -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary Meta Tags -->
+    <title>JavaScript Certification Quiz by Anubhav | Get Certified Today</title>
+    <meta name="title" content="JavaScript Certification Quiz by Anubhav | Get Certified Today">
+    <meta name="description" content="Take our comprehensive JavaScript quiz and earn a professional certificate. Test your JavaScript knowledge and get certified by industry expert Anubhav Chaudhary. Free certification with detailed assessment.">
+    <meta name="author" content="Anubhav Chaudhary">
+    <meta name="keywords" content="JavaScript certification, JavaScript quiz, JavaScript course, web development certification, Anubhav Chaudhary, coding certificate, JavaScript learning, online certification, free JavaScript certificate, JavaScript assessment, JavaScript testing, web development quiz">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://13anubhav.github.io/javascript-certification">
+    <meta property="og:title" content="JavaScript Certification Quiz by Anubhav | Get Certified Today">
+    <meta property="og:description" content="Take our comprehensive JavaScript quiz and earn a professional certificate. Test your JavaScript knowledge and get certified by industry expert Anubhav Chaudhary.">
+    <meta property="og:image" content="https://13anubhav.github.io/javascript-certification/images/certificate-preview.jpg">
+    <meta property="og:site_name" content="JavaScript Certification by Anubhav">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter -->
+    <meta name="twitter:creator" content="@AnubhavChaudhary">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://13anubhav.github.io/javascript-certification">
+    <meta property="twitter:title" content="JavaScript Certification Quiz by Anubhav | Get Certified Today">
+    <meta property="twitter:description" content="Take our comprehensive JavaScript quiz and earn a professional certificate. Test your JavaScript knowledge and get certified by industry expert Anubhav Chaudhary.">
+    <meta property="twitter:image" content="https://13anubhav.github.io/javascript-certification/images/certificate-preview.jpg">
+
+    <!-- Additional SEO Tags -->
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="googlebot" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+    <meta name="generator" content="JavaScript Quiz Certificate Generator">
+    <meta name="theme-color" content="#1a2980">
+    <meta name="rating" content="General">
+    <meta name="copyright" content="Copyright © 2024 Anubhav Chaudhary">
+    <link rel="canonical" href="https://13anubhav.github.io/javascript-certification">
+
+    <!-- Performance & Security -->
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' cdnjs.cloudflare.com 'unsafe-inline' 'unsafe-eval'">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+
+    <!-- Schema.org Markup - Enhanced -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "EducationalOccupationalCredential",
+        "name": "JavaScript Fundamentals Certification",
+        "provider": {
+            "@type": "Person",
+            "name": "Anubhav Chaudhary",
+            "jobTitle": "JavaScript Instructor",
+            "url": "https://13anubhav.github.io/javascript-certification",
+            "sameAs": [
+                "https://github.com/13anubhav/javascript-certification",
+                "https://twitter.com/"
+            ]
+        },
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock"
+        },
+        "educationalLevel": "Beginner to Intermediate",
+        "competencyRequired": "JavaScript Programming",
+        "description": "Professional certification in JavaScript fundamentals through an interactive quiz assessment",
+        "audience": {
+            "@type": "Audience",
+            "audienceType": "Web Developers"
+        },
+        "hasCourseInstance": {
+            "@type": "CourseInstance",
+            "courseMode": "online",
+            "duration": "PT30M"
+        }
+    }
+    </script>
+
+    <!-- Resources -->
+    <link rel="stylesheet" href="style.css">
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="welcome-screen">
+            <h1>JavaScript Quiz</h1>
+            <input type="text" id="userName" placeholder="Enter your name">
+            <button onclick="startQuiz()">Start Quiz</button>
+        </div>
+
+        <div class="quiz-container" style="display: none;">
+            <div id="question"></div>
+            <div id="options" class="options"></div>
+            <div class="navigation-buttons">
+                <button onclick="previousQuestion()" id="prevBtn" style="display: none;">Previous</button>
+                <button onclick="submitAnswer()" id="nextBtn">Next</button>
+            </div>
+        </div>
+
+        <div class="certificate" id="certificate" style="display: none;">
+            <div class="certificate-content">
+                <div class="certificate-header">
+                    <h2>Certificate of Excellence</h2>
+                </div>
+
+                <div class="certificate-body">
+                    <p class="certificate-text">This is to certify that</p>
+                    <h3 id="certificateName" class="certificate-name"></h3>
+                    <p class="certificate-text">has successfully completed the</p>
+                    <h3 class="certificate-course">JavaScript Fundamentals Course</h3>
+                    <p class="certificate-text">with distinction scoring <span id="score"></span>/5</p>
+                </div>
+
+                <div class="certificate-footer">
+                    <div class="signature-section">
+                        <div class="signature">
+                            <div class="instructor-signature">Anubhav Chaudhary</div>
+                            <div class="signature-line"></div>
+                            <p class="signature-title">Course Instructor</p>
+                        </div>
+                        <div class="signature">
+                            <div class="date-signature" id="date"></div>
+                            <div class="signature-line"></div>
+                            <p class="signature-title">Date</p>
+                        </div>
+                    </div>
+                </div>
+
+                <button onclick="downloadCertificate()" class="download-btn">Download Certificate</button>
+            </div>
+
+            <div class="seal">
+                <div class="seal-content">
+                    <div class="seal-certified">CERTIFIED</div>
+                    <div class="seal-javascript">JavaScript</div>
+                    <div class="seal-developer">Developer</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    
+</body>
+</html>
